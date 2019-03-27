@@ -137,14 +137,15 @@
   \begin{center}
     \begin{tabular}{|l|llll|}
       \hline
-      & Fraction$_{\text{1}}$ & Fraction$_{\text{2}}$ & \ldots{} & Fraction$_{\text{m}}$ \\
+      & Fraction$_{\text{1}}$ & Fraction$_{\text{2}}$ & \ldots{} & Fraction$_{\text{L}}$ \\
       \hline
-      p$_{\text{1}}$ & q$_{\text{1,1}}$ & q$_{\text{1,2}}$ & \ldots{} & q$_{\text{1,m}}$ \\
-      p$_{\text{2}}$ & q$_{\text{2,1}}$ & q$_{\text{2,2}}$ & \ldots{} & q$_{\text{2,m}}$ \\
-      p$_{\text{3}}$ & q$_{\text{3,1}}$ & q$_{\text{3,2}}$ & \ldots{} & q$_{\text{3,m}}$ \\
-      p$_{\text{4}}$ & q$_{\text{4,1}}$ & q$_{\text{4,2}}$ & \ldots{} & q$_{\text{4,m}}$ \\
+      {\bf x}$_{\text{1}}$ & $x_{\text{1,1}}$ & $x_{\text{1,2}}$ & \ldots{} & $x_{\text{1,L}}$ \\
+      {\bf x}$_{\text{2}}$ & $x_{\text{2,1}}$ & $x_{\text{2,2}}$ & \ldots{} & $x_{\text{2,L}}$ \\
+      {\bf x}$_{\text{3}}$ & $x_{\text{3,1}}$ & $x_{\text{3,2}}$ & \ldots{} & $x_{\text{3,L}}$ \\
       \vdots & \vdots & \vdots & \vdots & \vdots \\
-      p$_{\text{j}}$ & q$_{\text{j,1}}$ & q$_{\text{j,2}}$ & \ldots{} & q$_{\text{j, m}}$ \\
+      {\bf x}$_{\text{i}}$ & $x_{\text{i,1}}$ & $x_{\text{i,2}}$ & \ldots{} & $x_{\text{i,L}}$ \\
+      \vdots & \vdots & \vdots & \vdots & \vdots \\
+      {\bf x}$_{\text{N}}$ & $x_{\text{N,1}}$ & $x_{\text{N,2}}$ & \ldots{} & $x_{\text{N, L}}$ \\
       \hline
     \end{tabular}
   \end{center}
@@ -154,14 +155,15 @@
   \begin{center}
     \begin{tabular}{|l|llll||l|}
       \hline
-      & Fraction$_{\text{1}}$ & Fraction$_{\text{2}}$ & \ldots{} & Fraction$_{\text{m}}$ & markers\\
+      & Fraction$_{\text{1}}$ & Fraction$_{\text{2}}$ & \ldots{} & Fraction$_{\text{L}}$ & markers\\
       \hline
-      p$_{\text{1}}$ & q$_{\text{1,1}}$ & q$_{\text{1,2}}$ & \ldots{} & q$_{\text{1,m}}$ & unknown \\
-      p$_{\text{2}}$ & q$_{\text{2,1}}$ & q$_{\text{2,2}}$ & \ldots{} & q$_{\text{2,m}}$ & \textcolor{Red}{$loc_{1}$}\\
-      p$_{\text{3}}$ & q$_{\text{3,1}}$ & q$_{\text{3,2}}$ & \ldots{} & q$_{\text{3,m}}$ & unknown \\
-      p$_{\text{4}}$ & q$_{\text{4,1}}$ & q$_{\text{4,2}}$ & \ldots{} & q$_{\text{4,m}}$ & \textcolor{Blue}{$loc_{i}$}\\
+      {\bf x}$_{\text{1}}$ & $x_{\text{1,1}}$ & $x_{\text{1,2}}$ & \ldots{} & $x_{\text{1,L}}$ & unknown \\
+      {\bf x}$_{\text{2}}$ & $x_{\text{2,1}}$ & $x_{\text{2,2}}$ & \ldots{} & $x_{\text{2,L}}$ & \textcolor{Red}{$loc_{1}$}\\
+      {\bf x}$_{\text{3}}$ & $x_{\text{3,1}}$ & $x_{\text{3,2}}$ & \ldots{} & $x_{\text{3,L}}$ & unknown \\
+      \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+      {\bf x}$_{\text{i}}$ & $x_{\text{i,1}}$ & $x_{\text{i,2}}$ & \ldots{} & $x_{\text{i,L}}$ & \textcolor{Blue}{$loc_{k}$}\\
       \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
-      p$_{\text{j}}$ & q$_{\text{j,1}}$ & q$_{\text{j,2}}$ & \ldots{} & q$_{\text{j, m}}$ & unknown \\
+      {\bf x}$_{\text{N}}$ & $x_{\text{N,1}}$ & $x_{\text{N,2}}$ & \ldots{} & $x_{\text{N, K}}$ & unknown \\
       \hline
     \end{tabular}
   \end{center}
@@ -446,7 +448,7 @@
     $\Sigma_k$, so that:
 
     \begin{align}
-      {\bf x}_i | z_i = k \quad \sim \mathcal{N}(\boldsymbol{\mu}_k, \Sigma_k). \label{equation::preq}
+      {\bf x}_i | z_i = k \quad \sim \mathcal{N}(\boldsymbol{\mu}_k, \Sigma_k) \label{equation::preq}
     \end{align}
 
     \pause
@@ -463,7 +465,7 @@
     matrix $V$.
 
     \begin{align}
-      {\bf x}_i | z_i = k, \phi_i \quad \sim \mathcal{N}(\boldsymbol{\mu}_k, \Sigma_k)^{\phi_i}\mathcal{T}(\kappa, \boldsymbol{M}, V)^{1 - \phi_i }.
+      {\bf x}_i | z_i = k, \phi_i \quad \sim \mathcal{N}(\boldsymbol{\mu}_k, \Sigma_k)^{\phi_i}\mathcal{T}(\kappa, \boldsymbol{M}, V)^{1 - \phi_i }
     \end{align}
 
 
