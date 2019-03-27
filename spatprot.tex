@@ -408,6 +408,10 @@
   \end{figure}
 \end{frame}
 
+\begin{frame}{}
+\includegraphics[width=1\linewidth]{./figs_more/plostagm.png}
+\end{frame}
+
 
 \begin{frame}{A Bayesian Mixture Modelling Approach For Spatial Proteomics}
 
@@ -427,14 +431,50 @@
       us to a \textit{T Augmented Gaussian Mixture model}.
 
     \item<+-> This methodology allows proteome-wide
-      \textbf{uncertainty quantification} (Shannon entropy), thus
-      adding a further layer to the analysis of spatial proteomics.
+      \textbf{uncertainty quantification}, thus adding a further layer
+      to the analysis of spatial proteomics.
 
   \end{itemize}
 \end{frame}
 
+
 \begin{frame}{}
 
+    We initially model the distribution of profiles associated with
+    proteins that localise to the $k$-th component as multivariate
+    normal with mean vector $\boldsymbol{\mu}_k$ and covariance matrix
+    $\Sigma_k$, so that:
+
+    \begin{align}
+      {\bf x}_i | z_i = k \quad \sim \mathcal{N}(\boldsymbol{\mu}_k, \Sigma_k). \label{equation::preq}
+    \end{align}
+
+    \pause
+
+    We extend it by introducing an additional \textit{outlier
+      component}. To do this, we augment our model by introducing a
+    further indicator latent variable $\phi$. Each protein ${\bf x}_i$
+    is now described by an additional variable $\phi_i$, with $\phi_i
+    = 1$ indicating that protein ${\bf x}_i$ belongs to a organelle
+    derived component and $\phi_i = 0$ indicating that protein ${\bf
+      x}_i$ is not well described by these known components. This
+    outlier component is modelled as a multivariate T distribution
+    with degrees of freedom $\kappa$, mean vector $\bf{M}$, and scale
+    matrix $V$.
+
+    \begin{align}
+      {\bf x}_i | z_i = k, \phi_i \quad \sim \mathcal{N}(\boldsymbol{\mu}_k, \Sigma_k)^{\phi_i}\mathcal{T}(\kappa, \boldsymbol{M}, V)^{1 - \phi_i }.
+    \end{align}
+
+
+\end{frame}
+
+\begin{frame}{}
+  \begin{figure}
+    \includegraphics[width=1\linewidth]{./figs_more/graphmodel2.pdf}
+    \caption{Plate diagram specifying the conditional independencies
+      and parameters in TAGM.}
+  \end{figure}
 \end{frame}
 
 
